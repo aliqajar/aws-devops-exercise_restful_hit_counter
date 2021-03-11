@@ -10,9 +10,11 @@ Goals:
 
 Example:
 
+```
 curl https://xxxxxxxxxx.execute-api.us-west-2.amazonaws.com/prod/request1
 curl https://xxxxxxxxxx.execute-api.us-west-2.amazonaws.com/prod/request1/foo
 curl https://xxxxxxxxxx.execute-api.us-west-2.amazonaws.com/prod/request1/foo/bar
+```
 
 Requirements:
 
