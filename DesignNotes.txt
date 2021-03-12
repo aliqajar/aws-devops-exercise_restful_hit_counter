@@ -1,0 +1,72 @@
+
+1) designed restful api (Lambda + Gateway + DynamoDB)
+
+2) to let the server accept any derivative of /request1, added a proxy
+
+3) data are saved in a dynamodb called UrlHitCountTable
+Table has three columns: 
+id: (urltail)
+count: (number of times the tail is hit)
+request: (a copy of the request passed to the server)
+
+4) Generated apikeys for prod and test. They are stoted in SecretManager.
+
+5) I could use buildit API-Key, but I manually added the authentication logic
+
+6) Defined env variable for prod. 
+
+7) Service is setup on 'us-west-2' servers
+
+8) forked the project and will send this as a pull request to the main repo
+
+9) API is accessible throught the following url
+
+https://2ze62728i4.execute-api.us-west-2.amazonaws.com/prod/request1
+
+prod apikey should be passed in header
+X-API-KEY = "58cde1ac-34a9-43ea-9c2d-ed5fb9b4d566"
+
+
+
+current sample data in the db
+
+[
+    {
+        "urltail": "/request1/bbb",
+        "hitcount": "6"
+    },
+    {
+        "urltail": "/request1/aaa",
+        "hitcount": "4"
+    },
+    {
+        "urltail": "/request1/123/foo",
+        "hitcount": "2"
+    },
+    {
+        "urltail": "/request1/a1a2",
+        "hitcount": "2"
+    },
+    {
+        "urltail": "/request1/foo",
+        "hitcount": "7"
+    },
+    {
+        "urltail": "/request1/",
+        "hitcount": "2"
+    },
+    {
+        "urltail": "/request1/123",
+        "hitcount": "1"
+    },
+    {
+        "urltail": "/request1/123/foo/bar",
+        "hitcount": "5"
+    },
+    {
+        "urltail": "/request1/foo/bar",
+        "hitcount": "4"
+    }
+]
+
+
